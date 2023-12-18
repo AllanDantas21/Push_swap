@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 13:03:22 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/18 13:41:28 by aldantas         ###   ########.fr       */
+/*   Created: 2023/11/07 20:31:53 by aldantas          #+#    #+#             */
+/*   Updated: 2023/11/07 20:31:55 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef PUSH_SWAP.H
-# define PUSH_SWAP.H
+#include "libft.h"
 
-typedef struct s_list
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int		value;
-	int		pos;
-	struct s_list	*next;
-}	t_list;
+	t_list	*new_lst;
+	t_list	*new_elem;
 
-#endif
+	if (!f || !del)
+		return (NULL);
+	new_lst = NULL;
+	while (lst)
+	{
+		new_elem = ft_lstnew(f(lst->content));
+		if (!new_elem)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_lst, new_elem);
+		lst = lst->next;
+	}
+	return (new_lst);
+}

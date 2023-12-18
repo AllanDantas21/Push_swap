@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 13:03:22 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/18 13:41:28 by aldantas         ###   ########.fr       */
+/*   Created: 2023/11/07 20:31:06 by aldantas          #+#    #+#             */
+/*   Updated: 2023/11/07 20:31:08 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef PUSH_SWAP.H
-# define PUSH_SWAP.H
+#include "libft.h"
 
-typedef struct s_list
+t_list	*ft_lstnew(void *content)
 {
-	int		value;
-	int		pos;
-	struct s_list	*next;
-}	t_list;
+	t_list	*element;
 
-#endif
+	element = (t_list *)malloc(sizeof(t_list));
+	if (element == NULL)
+		return (NULL);
+	element->content = content;
+	element->next = NULL;
+	return (element);
+}

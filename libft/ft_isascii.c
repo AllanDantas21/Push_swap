@@ -1,22 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 13:03:22 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/18 13:41:28 by aldantas         ###   ########.fr       */
+/*   Created: 2023/10/16 10:48:57 by aldantas          #+#    #+#             */
+/*   Updated: 2023/10/16 10:51:07 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef PUSH_SWAP.H
-# define PUSH_SWAP.H
+#include "libft.h"
 
-typedef struct s_list
+int	ft_isascii(int c)
 {
-	int		value;
-	int		pos;
-	struct s_list	*next;
-}	t_list;
-
-#endif
+	return (c >= 0 && c <= 127);
+}

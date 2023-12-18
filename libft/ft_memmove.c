@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 13:03:22 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/18 13:41:28 by aldantas         ###   ########.fr       */
+/*   Created: 2023/10/19 13:00:34 by aldantas          #+#    #+#             */
+/*   Updated: 2023/10/31 19:11:53 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef PUSH_SWAP.H
-# define PUSH_SWAP.H
+#include "libft.h"
 
-typedef struct s_list
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int		value;
-	int		pos;
-	struct s_list	*next;
-}	t_list;
+	char	*d;
+	char	*s;
 
-#endif
+	d = (char *) dest;
+	s = (char *) src;
+	if (!dest && !src)
+		return (0);
+	if (dest <= src)
+	{
+		while (n--)
+			*d++ = *s++;
+	}
+	else if (dest > src)
+	{
+		d += n - 1;
+		s += n - 1;
+		while (n--)
+			*d-- = *s--;
+	}
+	return (dest);
+}

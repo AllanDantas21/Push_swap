@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 13:03:22 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/18 13:41:28 by aldantas         ###   ########.fr       */
+/*   Created: 2023/10/17 17:28:05 by aldantas          #+#    #+#             */
+/*   Updated: 2023/10/30 14:28:14 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef PUSH_SWAP.H
-# define PUSH_SWAP.H
+#include "libft.h"
 
-typedef struct s_list
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int		value;
-	int		pos;
-	struct s_list	*next;
-}	t_list;
+	unsigned char	*a;
 
-#endif
+	a = (unsigned char *)s;
+	while (n--)
+	{
+		if (*a == (unsigned char) c)
+			return ((char *)(a));
+		a++;
+	}
+	return (NULL);
+}

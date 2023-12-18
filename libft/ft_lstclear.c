@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 13:03:22 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/18 13:41:28 by aldantas         ###   ########.fr       */
+/*   Created: 2023/11/07 20:30:54 by aldantas          #+#    #+#             */
+/*   Updated: 2023/11/07 20:30:56 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef PUSH_SWAP.H
-# define PUSH_SWAP.H
+#include "libft.h"
 
-typedef struct s_list
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int		value;
-	int		pos;
-	struct s_list	*next;
-}	t_list;
+	t_list	*tmp;
+	t_list	*element;
 
-#endif
+	if (!lst || !del)
+		return ;
+	element = *lst;
+	while (element != NULL)
+	{
+		tmp = element->next;
+		ft_lstdelone(element, del);
+		element = tmp;
+	}
+	*lst = NULL;
+}

@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 13:03:22 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/18 13:41:28 by aldantas         ###   ########.fr       */
+/*   Created: 2023/10/16 10:43:11 by aldantas          #+#    #+#             */
+/*   Updated: 2023/10/23 16:37:35 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef PUSH_SWAP.H
-# define PUSH_SWAP.H
+#include "libft.h"
 
-typedef struct s_list
+int	ft_isalnum(int c)
 {
-	int		value;
-	int		pos;
-	struct s_list	*next;
-}	t_list;
-
-#endif
+	return (((c >= 'a' && c <= 'z')
+			|| (c >= 'A' && c <= 'Z')) || (c >= '0' && c <= '9'));
+}
