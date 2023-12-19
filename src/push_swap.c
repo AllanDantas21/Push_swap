@@ -6,10 +6,10 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 15:32:54 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/18 22:48:51 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/12/18 22:51:24 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 void	init_stack(t_list **stack, int argc, char **argv)
 {
 	//Função para passar os argumentos do argv para a stack_a;
