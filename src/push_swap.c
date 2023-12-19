@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 15:32:54 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/19 00:18:52 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/12/19 00:30:22 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
@@ -35,22 +35,6 @@ void	init_stack(t_list **stack, int argc, char **argv)
 	if (argc == 2)
 		free(args);
 }
-
-void	index_stack(t_list **stack)
-{
-	t_list	*head;
-	int		index;
-
-	index = 0;
-	head = get_next_min(stack);
-	while (head)
-	{
-		head->index = index++;
-		head = get_next_min(stack);
-	}
-}
-}
-
 
 int	main(int argc, char **argv)
 {
