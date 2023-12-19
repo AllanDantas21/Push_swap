@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/18 13:03:22 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/19 00:14:05 by aldantas         ###   ########.fr       */
+/*   Created: 2023/12/19 00:19:20 by aldantas          #+#    #+#             */
+/*   Updated: 2023/12/19 00:28:36 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef PUSH_SWAP.H
-# define PUSH_SWAP.H
+#include "../includes/minitalk.h"
 
-# include "../libft/libft.h"
-
-typedef struct s_list
+void	set_index(t_list **stack)
 {
-	int		value;
+	t_list	*head;
 	int		index;
-	struct s_list	*next;
-}	t_list;
 
-#endif
+	index = 0;
+	while(head)
+	{
+		
+	}
+}

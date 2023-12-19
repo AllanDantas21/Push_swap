@@ -6,13 +6,49 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 15:32:54 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/18 22:51:24 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/12/19 00:18:52 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
 void	init_stack(t_list **stack, int argc, char **argv)
 {
-	//Função para passar os argumentos do argv para a stack_a;
+	//Função para passar os argumentos do argv para a stack_a
+	t_list	*new;
+	char	**args;
+	int	i;
+
+	i = 0;
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
+	{
+		i = 1;
+		args = argv;
+	}
+	while (args[i])
+	{
+		new = ft_lstnew(ft_atoi(args[i]));
+		ft_lstadd_back(stack, new);
+		i++;
+	}
+	set_index(stack_a); // setar o index de cada node
+	if (argc == 2)
+		free(args);
+}
+
+void	index_stack(t_list **stack)
+{
+	t_list	*head;
+	int		index;
+
+	index = 0;
+	head = get_next_min(stack);
+	while (head)
+	{
+		head->index = index++;
+		head = get_next_min(stack);
+	}
+}
 }
 
 
