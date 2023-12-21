@@ -13,12 +13,13 @@
 
 void	set_index(t_list **stack)
 {
-	t_list	*head;
+	t_list	**head;
 	int		index;
 
 	index = 0;
+	head = stack;
 	while(head)
 	{
-		
+		head->index = index++;
 	}
 }

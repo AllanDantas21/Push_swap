@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
-void	init_stack(t_list **stack, int argc, char **argv)
+static void	init_stack(t_list **stack, int argc, char **argv)
 {
 	//Função para passar os argumentos do argv para a stack_a
 	t_list	*new;

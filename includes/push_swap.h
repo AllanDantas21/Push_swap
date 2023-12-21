@@ -21,4 +21,6 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+void	set_index(t_list **stack);
+
 #endif
