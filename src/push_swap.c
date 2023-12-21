@@ -27,7 +27,7 @@ static void	init_stack(t_list **stack, int argc, char **argv)
 	}
 	while (args[i])
 	{
-		new = ft_lstnew(ft_atoi(args[i]));
+		new = ft_lstnew((void *)ft_atoi(args[i]));
 		ft_lstadd_back(stack, new);
 		i++;
 	}
@@ -49,8 +49,9 @@ int	main(int argc, char **argv)
 	*stack_a = NULL;
 	*stack_b = NULL;
 	init_stack(stack_a, argc, argv); /*-> iniciar a stack_a */
-	sort_stack(stack_a, stack_b); /* função que vai fazer o sort das duas stacks */
-	free_stack(stack_a); /* liberar as stacks na heap */
+	print_values(stack_a);
+	//sort_stack(stack_a, stack_b); /* função que vai fazer o sort das duas stacks */
+	//free_stack(stack_a); /* liberar as stacks na heap */
 	free_stack(stack_b);
 	return(0);
 }
