@@ -11,13 +11,28 @@
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
 
+void	free_stack(t_list **stack)
+{
+	t_list	*head;
+	t_list	*tmp;
+
+	head = *stack;
+	while(head)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
+	free(stack);
+}
+
 void	set_index(t_list **stack)
 {
-	t_list	**head;
+	t_list	*head;
 	int		index;
 
 	index = 0;
-	head = stack;
+	head = *stack;
 	while(head)
 	{
 		head->index = index++;
@@ -31,8 +46,8 @@ void	print_values(t_list *stack)
 	tmp = stack;
 	while(tmp != NULL)
 	{
-		ft_putnbr(tmp->value, 1);
-		ft_putchar_fd("\n", 1);
+		ft_putnbr_fd(tmp->value, 1);
+		ft_putchar_fd('\n', 1);
 		tmp = tmp->next;
 	}
 }

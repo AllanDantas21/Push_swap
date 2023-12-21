@@ -1,11 +1,9 @@
 NAME = push_swap
 LIBFT = libft.a
-SRCC_FILES =	 utils.c ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
-		ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
-		ft_lstmap_bonus.c
+SRCC_FILES =	push_swap.c utils.c lists.c
 SRC_DIR = src/
 SRC = $(addprefix $(SRC_DIR), $(SRCC_FILES))
-OBJ = ${SRCC:.c=.o}
+OBJ = ${SRC:.c=.o}
 CC			= cc
 CFLAGS		= -Wall -Werror -Wextra
 INCLUDE = -I include
@@ -15,7 +13,7 @@ all:	$(NAME)
 
 $(NAME) : $(OBJ)
 		@make -C libft
-		$(CC) $(CFLAGS) src/push_swap.c $(OBJ) $(INCLUDE) libft/$(LIBFT) -o $(NAME)
+		$(CC) $(CFLAGS)  $(OBJ) $(INCLUDE) libft/$(LIBFT) -o $(NAME)
 
 clean : 
 		@make clean -C libft
