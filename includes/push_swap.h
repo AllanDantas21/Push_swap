@@ -21,8 +21,10 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+void	check_args(char **argv, int argc);
 void	set_index(t_list **stack);
 void	print_values(t_list *stack);
+void	*ft_free(char **mat);
 
 // funções de lista importadadas da libft
 void	ft_lstadd_back(t_list **lst, t_list *new);

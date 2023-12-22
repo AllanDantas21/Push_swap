@@ -31,7 +31,7 @@ static void	init_stack(t_list **stack, int argc, char **argv)
 		ft_lstadd_back(stack, new);
 		i++;
 	}
-	set_index(stack); // setar o index de cada node
+	//set_index(stack); // setar o index de cada node
 	if (argc == 2)
 		free(args);
 }
@@ -41,9 +41,9 @@ int	main(int argc, char **argv)
 	t_list	**stack_a;
 	t_list	**stack_b;
 	
-	if(argc < 2)
+	if (argc < 2)
 		return (-1);	/*verificar se a entrada de args é menos que 2*/
-	//checar se os argumentos são validos -> sinal duplo, repetição e etc;
+	check_args(argv, argc); //checar se os argumentos são validos -> sinal duplo, repetição e etc;
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
