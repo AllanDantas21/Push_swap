@@ -6,16 +6,16 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 15:32:54 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/19 00:30:22 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/12/23 18:18:29 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
+
 static void	init_stack(t_list **stack, int argc, char **argv)
 {
-	//Função para passar os argumentos do argv para a stack_a
 	t_list	*new;
 	char	**args;
-	int	i;
+	int		i;
 
 	i = 0;
 	if (argc == 2)
@@ -31,7 +31,7 @@ static void	init_stack(t_list **stack, int argc, char **argv)
 		ft_lstadd_back(stack, new);
 		i++;
 	}
-	//set_index(stack); // setar o index de cada node
+	/*set_index(stack); // setar o index de cada node*/
 	if (argc == 2)
 		free(args);
 }
@@ -40,18 +40,17 @@ int	main(int argc, char **argv)
 {
 	t_list	**stack_a;
 	t_list	**stack_b;
-	
+
 	if (argc < 2)
-		return (-1);	/*verificar se a entrada de args é menos que 2*/
-	check_args(argv, argc); //checar se os argumentos são validos -> sinal duplo, repetição e etc;
+		return (-1);
+	check_args(argv, argc);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
 	init_stack(stack_a, argc, argv); /*-> iniciar a stack_a */
 	print_values(*stack_a);
-	//sort_stack(stack_a, stack_b); /* função que vai fazer o sort das duas stacks */
-	//free_stack(stack_a); /* liberar as stacks na heap */
+	//sort_stack(stack_a, stack_b); /* função que vai fazer o sort
 	free_stack(stack_a);
-	return(0);
+	return (0);
 }

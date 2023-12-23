@@ -29,23 +29,23 @@ static int	has_duplicate(int num, char **argv, int i)
 	return (0);
 }
 
-int has_num(char *num)
+int	has_num(char *num)
 {
-	int i;
+	short int	i;
 
 	i = 0;
 	if (num[0] == '-')
 		i++;
-	while(num[i])
+	while (num[i])
 	{
 		if (!ft_isdigit(num[i]))
-			return(0);
+			return (0);
 		i++;
 	}
 	return (1);
 }
 
-void check_args(char **argv, int  argc)
+void	check_args(char **argv, int argc)
 {
 	int		i;
 	long	tmp;
@@ -62,7 +62,7 @@ void check_args(char **argv, int  argc)
 	while (args[i])
 	{
 		tmp = ft_atoi(args[i]);
-		f (!has_num(args[i]))
+		if (!has_num(args[i]))
 			ft_error("Error");
 		if (has_duplicate(tmp, args, i))
 			ft_error("Error");
