@@ -36,6 +36,13 @@ int	pb(t_list **stack_b, t_list **stack_a);
 int ra(t_list **stack_a);
 int rb(t_list **stack_b);
 int rr(t_list **stack_a, t_list **stack_b);
+int	rra(t_list **stack_a);
+int rrb(t_list **stack_b);
+int	rrr(t_list **stack_a, t_list **stack_b);
+
+
+
+
 
 // funções de lista importadadas da libft
 void	ft_lstadd_back(t_list **lst, t_list *new);
