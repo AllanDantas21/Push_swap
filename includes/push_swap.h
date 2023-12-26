@@ -24,6 +24,7 @@ typedef struct s_list
 void	check_args(char **argv, int argc);
 void	set_index(t_list **stack);
 void	print_values(t_list *stack);
+void	ft_error(char *msg);
 void	*ft_free(char **mat);
 
 // funções de lista importadadas da libft
