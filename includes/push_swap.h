@@ -27,6 +27,16 @@ void	print_values(t_list *stack);
 void	ft_error(char *msg);
 void	*ft_free(char **mat);
 
+// Movimentos da push_swap
+int	sa(t_list **stack_a);
+int	sb(t_list **stack_b);
+int	ss(t_list **stack_a, t_list **stack_b);
+int	pa(t_list **stack_a, t_list **stack_b);
+int	pb(t_list **stack_b, t_list **stack_a);
+int ra(t_list **stack_a);
+int rb(t_list **stack_b);
+int rr(t_list **stack_a, t_list **stack_b);
+
 // funções de lista importadadas da libft
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
