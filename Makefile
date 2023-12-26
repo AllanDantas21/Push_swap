@@ -1,6 +1,6 @@
 NAME = push_swap
 LIBFT = libft.a
-SRCC_FILES =	push_swap.c utils.c lists.c check_args.c swap.c
+SRCC_FILES =	push_swap.c utils.c lists.c check_args.c swap.c push.c
 SRC_DIR = src/
 SRC = $(addprefix $(SRC_DIR), $(SRCC_FILES))
 OBJ = ${SRC:.c=.o}
