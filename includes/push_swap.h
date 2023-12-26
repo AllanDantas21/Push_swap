@@ -40,10 +40,6 @@ int	rra(t_list **stack_a);
 int rrb(t_list **stack_b);
 int	rrr(t_list **stack_a, t_list **stack_b);
 
-
-
-
-
 // funções de lista importadadas da libft
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
