@@ -39,7 +39,7 @@ static void	init_stack(t_list **stack, int argc, char **argv)
 static void	sort_stack(t_list **stack_a, t_list **stack_b)
 {
 	if (ft_lstsize(*stack_a) <= 5)
-		ft_putendl_fd("menor q 5", 1);
+		radix_sort(stack_a, stack_b);
 	else
 		radix_sort(stack_a, stack_b);
 }
