@@ -41,24 +41,27 @@ t_list	*ft_lstnew(int value)
 	t_list	*element;
 
 	element = (t_list *)malloc(sizeof(t_list));
-	if (element == NULL)
+	if (!element)
 		return (NULL);
 	element->value = value;
+	element->index = -1;
 	element->next = NULL;
 	return (element);
 }
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *head)
 {
-	int	size;
+	size_t	i;
+	t_list	*tmp;
 
-	size = 0;
-	while (lst != NULL)
+	tmp = head;
+	i = 0;
+	while (tmp)
 	{
-		lst = lst->next;
-		size++;
+		tmp = tmp->next;
+		i++;
 	}
-	return (size);
+	return (i);
 }
 
 void	print_values(t_list *stack)
@@ -69,7 +72,7 @@ void	print_values(t_list *stack)
 	while (tmp != NULL)
 	{
 		ft_putnbr_fd(tmp->value, 1);
-		ft_putnbr_fd(tmp->index, 1);
+		//ft_putnbr_fd(tmp->index, 1);
 		ft_putchar_fd('\n', 1);
 		tmp = tmp->next;
 	}

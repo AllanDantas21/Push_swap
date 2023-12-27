@@ -41,7 +41,7 @@ void	radix_sort(t_list **stack_a, t_list **stack_b)
 			if (((head_a->index >> i) & 1) == 1)
 				ra(stack_a);
 			else
-				pb(stack_a, stack_b);
+				pb(stack_b, stack_a);
 		}
 		while (ft_lstsize(*stack_b) != 0)
 			pa(stack_a, stack_b);
