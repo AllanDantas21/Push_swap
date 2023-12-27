@@ -31,9 +31,9 @@ static void	init_stack(t_list **stack, int argc, char **argv)
 		ft_lstadd_back(stack, new);
 		i++;
 	}
-	/*set_index(stack); // setar o index de cada node*/
+	set_index(stack);
 	if (argc == 2)
-		free(args);
+		ft_free(args);
 }
 
 int	main(int argc, char **argv)
@@ -48,9 +48,16 @@ int	main(int argc, char **argv)
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
-	init_stack(stack_a, argc, argv); /*-> iniciar a stack_a */
-	print_values(*stack_a);
-	//sort_stack(stack_a, stack_b); /* função que vai fazer o sort
+	init_stack(stack_a, argc, argv);
+	if (is_sorted(stack_a))
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
+		return (0);
+	}
+	sort_stack(stack_a, stack_b);
+	//print_values(*stack_a);
 	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }

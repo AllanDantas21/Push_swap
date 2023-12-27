@@ -21,8 +21,10 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-void	check_args(char **argv, int argc);
+void	sort_stack(t_list **stack_a, t_list **stack_b);
 void	set_index(t_list **stack);
+int	is_sorted(t_list **stack);
+void	check_args(char **argv, int argc);
 void	print_values(t_list *stack);
 void	ft_error(char *msg);
 void	*ft_free(char **mat);

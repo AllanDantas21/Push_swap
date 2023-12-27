@@ -60,3 +60,18 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (size);
 }
+
+void	print_values(t_list *stack)
+{
+	t_list	*tmp;
+
+	tmp = stack;
+	while (tmp != NULL)
+	{
+		ft_putnbr_fd(tmp->value, 1);
+		//ft_putnbr_fd(tmp->index, 1);
+		ft_putchar_fd('\n', 1);
+		tmp = tmp->next;
+	}
+}
+
