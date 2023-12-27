@@ -69,7 +69,7 @@ void	print_values(t_list *stack)
 	while (tmp != NULL)
 	{
 		ft_putnbr_fd(tmp->value, 1);
-		//ft_putnbr_fd(tmp->index, 1);
+		ft_putnbr_fd(tmp->index, 1);
 		ft_putchar_fd('\n', 1);
 		tmp = tmp->next;
 	}

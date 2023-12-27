@@ -26,7 +26,7 @@ void	free_stack(t_list **stack)
 	free(stack);
 }
 
-static t_list	*get_next_min(t_list **stack)
+t_list	*get_next_min(t_list **stack)
 {
 	t_list	*head;
 	t_list	*min;

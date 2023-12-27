@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-static int rev_rotate_stack(t_list **stack)
+int rev_rotate_stack(t_list **stack)
 {
 	t_list  *head;
 	t_list  *tail;

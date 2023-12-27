@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-static int	swap_stack(t_list **stack)
+int	swap_stack(t_list **stack)
 {
 	t_list	*head;
 	t_list	*next;
@@ -24,14 +24,16 @@ static int	swap_stack(t_list **stack)
 
 int	sa(t_list **stack_a)
 {
-	swap_stack(stack_a);
+	if(swap_stack(stack_a) == -1)
+		return (-1);
 	ft_putendl_fd("sa", 1);
 	return (0);
 }
 
 int	sb(t_list **stack_b)
 {
-	swap_stack(stack_b);
+	if(swap_stack(stack_b) == -1)
+		return (-1);
 	ft_putendl_fd("sb", 1);
 	return (0);
 }

@@ -21,15 +21,21 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-void	sort_stack(t_list **stack_a, t_list **stack_b);
+void	radix_sort(t_list **stack_a, t_list **stack_b);
 void	set_index(t_list **stack);
-int	is_sorted(t_list **stack);
+t_list	*get_next_min(t_list **stack);
+int		is_sorted(t_list **stack);
 void	check_args(char **argv, int argc);
 void	print_values(t_list *stack);
 void	ft_error(char *msg);
 void	*ft_free(char **mat);
 
 // Movimentos da push_swap
+int	rotate_stack(t_list **stack);
+int	push_stack(t_list **stack_dst, t_list **stack_src);
+int	swap_stack(t_list **stack);
+int rev_rotate_stack(t_list **stack);
+
 int	sa(t_list **stack_a);
 int	sb(t_list **stack_b);
 int	ss(t_list **stack_a, t_list **stack_b);

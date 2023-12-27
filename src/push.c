@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-static int	push_stack(t_list **stack_dst, t_list **stack_src)
+int	push_stack(t_list **stack_dst, t_list **stack_src)
 {
 	t_list	*tmp;
 	t_list	*head_dst;
@@ -13,16 +13,17 @@ static int	push_stack(t_list **stack_dst, t_list **stack_src)
 	tmp = head_src;
 	head_src = head_src->next;
 	*stack_src = head_src;
-	if (head_dst)
+	if (!head_dst)
 	{
-		tmp->next = head_dst;
-		*stack_dst = tmp;
-	}
-	else
-	{
+		
 		head_dst = tmp;
 		head_dst->next = NULL;
 		*stack_dst = head_dst;
+	}
+	else
+	{
+		tmp->next = head_dst;
+		*stack_dst = tmp;
 	}
 	return (0);
 }
