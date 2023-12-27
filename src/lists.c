@@ -64,17 +64,17 @@ int	ft_lstsize(t_list *head)
 	return (i);
 }
 
-void	print_values(t_list *stack)
+void	free_stack(t_list **stack)
 {
+	t_list	*head;
 	t_list	*tmp;
 
-	tmp = stack;
-	while (tmp != NULL)
+	head = *stack;
+	while (head)
 	{
-		ft_putnbr_fd(tmp->value, 1);
-		//ft_putnbr_fd(tmp->index, 1);
-		ft_putchar_fd('\n', 1);
-		tmp = tmp->next;
+		tmp = head;
+		head = head->next;
+		free(tmp);
 	}
+	free(stack);
 }
-
