@@ -11,21 +11,6 @@
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
 
-void	free_stack(t_list **stack)
-{
-	t_list	*head;
-	t_list	*tmp;
-
-	head = *stack;
-	while (head)
-	{
-		tmp = head;
-		head = head->next;
-		free(tmp);
-	}
-	free(stack);
-}
-
 t_list	*get_next_min(t_list **stack)
 {
 	t_list	*head;
@@ -64,16 +49,16 @@ void	set_index(t_list **stack)
 	}
 }
 
-int	is_sorted(t_list **stack)
+void	print_values(t_list *stack)
 {
-	t_list	*head;
+	t_list	*tmp;
 
-	head = *stack;
-	while (head && head->next)
+	tmp = stack;
+	while (tmp != NULL)
 	{
-		if (head->value > head->next->value)
-			return (0);
-		head = head->next;
+		ft_putnbr_fd(tmp->value, 1);
+		//ft_putnbr_fd(tmp->index, 1);
+		ft_putchar_fd('\n', 1);
+		tmp = tmp->next;
 	}
-	return (1);
 }
