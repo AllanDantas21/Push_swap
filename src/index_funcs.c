@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   index_funcs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,6 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
+
+void	set_index(t_list **stack)
+{
+	t_list	*head;
+	int		index;
+
+	index = 0;
+	head = get_next_min(stack);
+	while (head)
+	{
+		head->index = index++;
+		head = get_next_min(stack);
+	}
+}
 
 t_list	*get_next_min(t_list **stack)
 {
@@ -35,18 +49,20 @@ t_list	*get_next_min(t_list **stack)
 	return (min);
 }
 
-void	set_index(t_list **stack)
+int	get_max_index(t_list **stack)
 {
-	t_list	*head;
-	int		index;
-
-	index = 0;
-	head = get_next_min(stack);
-	while (head)
+	t_list	*tmp;
+	int		max;
+	
+	tmp = *stack;
+	max = tmp->index;
+	while(tmp)
 	{
-		head->index = index++;
-		head = get_next_min(stack);
+		if (tmp->index > max)
+			max = tmp->index;
+		tmp = tmp->next;
 	}
+	return (max);
 }
 
 void	print_values(t_list *stack)
