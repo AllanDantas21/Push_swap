@@ -78,3 +78,4 @@ void	free_stack(t_list **stack)
 	}
 	free(stack);
 }
+
