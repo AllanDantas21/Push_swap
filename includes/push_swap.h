@@ -22,6 +22,7 @@ typedef struct s_list
 }					t_list;
 
 void	sort_big(t_list **stack_a, t_list **stack_b);
+void	sort_small(t_list **stack_a, t_list **stack_b);
 void	set_index(t_list **stack);
 t_list	*get_next_min(t_list **stack);
 int		is_sorted(t_list **stack);

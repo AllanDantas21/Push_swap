@@ -2,5 +2,6 @@
 
 void	sort_small(t_list **stack_a, t_list **stack_b)
 {
-	
+	(void)stack_a;
+	(void)stack_b;
 }
