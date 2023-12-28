@@ -26,13 +26,16 @@ static void	sort_three(t_list **stack_a)
 
 static void	sort_four(t_list **stack_a, t_list **stack_b)
 {
+	int	min;
+
+	min = get_min_index(stack_a);
 	if (is_sorted(stack_a))
 		return ;
-	if ((*stack_a)->next->next->next->index == 0)
+	if ((*stack_a)->next->next->next->index == min)
 		rra(stack_a);
-	while ((*stack_a)->index != 0)
+	while ((*stack_a)->index != min)
 		ra(stack_a);
-	if ((*stack_a)->index == 0)
+	if ((*stack_a)->index == min)
 	{
 		pb(stack_a, stack_b);
 		sort_three(stack_a);
@@ -43,9 +46,22 @@ static void	sort_four(t_list **stack_a, t_list **stack_b)
 
 static void	sort_five(t_list **stack_a, t_list **stack_b)
 {
-	(void)stack_a;
- 	(void)stack_b;
-	return ;
+	int	min;
+
+	min = get_min_index(stack_a);
+	if (is_sorted(stack_a))
+		return ;
+	if ((*stack_a)->next->next->next->next->index == min)
+		rra(stack_a);
+	while ((*stack_a)->index != min)
+		ra(stack_a);
+	if ((*stack_a)->index == min)
+	{
+		pb(stack_a, stack_b);
+		sort_four(stack_a, stack_b);
+		pa(stack_a, stack_b);
+		return ;
+	}
 }
 
 void	sort_small(t_list **stack_a, t_list **stack_b)
