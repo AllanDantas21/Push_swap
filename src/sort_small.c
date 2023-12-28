@@ -31,6 +31,11 @@ static void	sort_four(t_list **stack_a, t_list **stack_b)
 	t_list	*head_a;
 
 	head_a = *stack_a;
+	if (head_a->next->next->next->index == 0)
+	{
+		rra(stack_a);
+		head_a = *stack_a;
+	}
 	while (head_a->index != 0)
 	{
 		ra(stack_a);
