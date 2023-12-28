@@ -25,6 +25,7 @@ void	sort_big(t_list **stack_a, t_list **stack_b);
 void	sort_small(t_list **stack_a, t_list **stack_b);
 void	set_index(t_list **stack);
 t_list	*get_next_min(t_list **stack);
+int		get_max_index(t_list **stack);
 int		is_sorted(t_list **stack);
 void	check_args(char **argv, int argc);
 void	print_values(t_list *stack);

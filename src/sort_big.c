@@ -14,21 +14,29 @@ int	is_sorted(t_list **stack)
 	return (1);
 }
 
+int	get_max_index(t_list **stack)
+{
+	t_list	*tmp;
+	int		max;
+	
+	tmp = *stack;
+	max = tmp->index;
+	while(tmp)
+	{
+		if (tmp->index > max)
+			max = tmp->index;
+		tmp = tmp->next;
+	}
+	return (max);
+}
+
 static int	get_max_bits(t_list **stack)
 {
-	t_list	*head;
-	int		max;
 	int		max_bits;
+	int		max;
 
-	head = *stack;
-	max = head->index;
+	max = get_max_index(stack);
 	max_bits = 0;
-	while (head)
-	{
-		if (head->index > max)
-			max = head->index;
-		head = head->next;
-	}
 	while ((max >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);
