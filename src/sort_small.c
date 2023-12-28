@@ -2,20 +2,18 @@
 
 static void	sort_three(t_list **stack_a)
 {
-	t_list	*head_a;
 	int		max;
 
 	max = get_max_index(stack_a);
-	head_a = *stack_a;
 	if (is_sorted(stack_a))
 		return ;
-	if ((head_a->index == max))
+	if (((*stack_a))->index == max)
 	{
 		ra(stack_a);
 		if(!is_sorted(stack_a))
 			sa(stack_a);
 	}
-	else if ((head_a->next->index == max))
+	else if (((*stack_a)->next->index == max))
 	{
 		sa(stack_a);
 		ra(stack_a);
