@@ -2,8 +2,8 @@
 
 int	rotate_stack(t_list **stack)
 {
-	t_list  *head;
-	t_list  *tail;
+	t_list	*head;
+	t_list	*tail;
 
 	if (ft_lstsize(*stack) < 2)
 		return (-1);
