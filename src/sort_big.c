@@ -28,23 +28,20 @@ static int	get_max_bits(t_list **stack)
 
 void	sort_big(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*head_a;
 	int		i;
 	int		j;
 	int		size;
 	int		max_bits;
 
 	i = 0;
-	head_a = *stack_a;
-	size = ft_lstsize(head_a);
+	size = ft_lstsize(*stack_a);
 	max_bits = get_max_bits(stack_a);
 	while (i < max_bits)
 	{
 		j = 0;
 		while (j++ < size)
 		{
-			head_a = *stack_a;
-			if (((head_a->index >> i) & 1) == 1)
+			if ((((*stack_a)->index >> i) & 1) == 1)
 				ra(stack_a);
 			else
 				pb(stack_a, stack_b);
