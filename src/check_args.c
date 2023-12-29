@@ -2,7 +2,7 @@
 
 void	ft_error(char *msg)
 {
-	ft_putendl_fd(msg, 2);
+	ft_putstr_fd(msg, 2);
 	exit(0);
 }
 
@@ -63,11 +63,11 @@ void	check_args(char **argv, int argc)
 	{
 		tmp = ft_atoi(args[i]);
 		if (!has_num(args[i]))
-			ft_error("Error");
+			ft_error("Error\n");
 		if (has_duplicate(tmp, args, i))
-			ft_error("Error");
+			ft_error("Error\n");
 		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_error("Error");
+			ft_error("Error\n");
 		i++;
 	}
 	if (argc == 2)

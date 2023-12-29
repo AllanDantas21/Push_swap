@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	sort_stack(stack_a, stack_b);
-	print_values(*stack_a);
+	//print_values(*stack_a);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);
