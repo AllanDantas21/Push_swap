@@ -18,6 +18,7 @@ static int	get_max_bits(t_list **stack)
 {
 	int		max_bits;
 	int		max;
+
 	max = get_max_index(stack);
 	max_bits = 0;
 	while ((max >> max_bits) != 0)
