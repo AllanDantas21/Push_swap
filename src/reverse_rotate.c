@@ -1,9 +1,9 @@
 #include "../includes/push_swap.h"
 
-int rev_rotate_stack(t_list **stack)
+int	rev_rotate_stack(t_list **stack)
 {
-	t_list  *head;
-	t_list  *tail;
+	t_list	*head;
+	t_list	*tail;
 
 	if (ft_lstsize(*stack) < 2)
 		return (-1);
@@ -31,12 +31,12 @@ int	rra(t_list **stack_a)
 	return (0);
 }
 
-int rrb(t_list **stack_b)
+int	rrb(t_list **stack_b)
 {
 	if (rev_rotate_stack(stack_b) == -1)
 		return (-1);
 	ft_putendl_fd("rrb", 1);
-	return (0); 
+	return (0);
 }
 
 int	rrr(t_list **stack_a, t_list **stack_b)

@@ -53,10 +53,10 @@ int	get_max_index(t_list **stack)
 {
 	t_list	*tmp;
 	int		max;
-	
+
 	tmp = *stack;
 	max = tmp->index;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->index > max)
 			max = tmp->index;
@@ -69,10 +69,10 @@ int	get_min_index(t_list **stack)
 {
 	t_list	*tmp;
 	int		min;
-	
+
 	tmp = *stack;
 	min = tmp->index;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->index < min)
 			min = tmp->index;
@@ -80,7 +80,6 @@ int	get_min_index(t_list **stack)
 	}
 	return (min);
 }
-
 
 void	print_values(t_list *stack)
 {

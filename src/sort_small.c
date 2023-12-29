@@ -2,7 +2,7 @@
 
 static void	sort_three(t_list **stack_a)
 {
-	int		max;
+	int	max;
 
 	max = get_max_index(stack_a);
 	if (is_sorted(stack_a))
@@ -10,17 +10,17 @@ static void	sort_three(t_list **stack_a)
 	if (((*stack_a))->index == max)
 	{
 		ra(stack_a);
-		if(!is_sorted(stack_a))
+		if (!is_sorted(stack_a))
 			sa(stack_a);
 	}
 	else if (((*stack_a)->next->index == max))
 	{
 		sa(stack_a);
 		ra(stack_a);
-		if(!is_sorted(stack_a))
+		if (!is_sorted(stack_a))
 			sa(stack_a);
 	}
-	else 
+	else
 		sa(stack_a);
 }
 
@@ -67,7 +67,7 @@ static void	sort_five(t_list **stack_a, t_list **stack_b)
 void	sort_small(t_list **stack_a, t_list **stack_b)
 {
 	int	size_lst;
-	
+
 	size_lst = ft_lstsize(*stack_a);
 	if (size_lst == 2)
 		sa(stack_a);

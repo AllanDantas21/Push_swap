@@ -15,7 +15,6 @@ int	push_stack(t_list **stack_dst, t_list **stack_src)
 	*stack_src = head_src;
 	if (!head_dst)
 	{
-		
 		head_dst = tmp;
 		head_dst->next = NULL;
 		*stack_dst = head_dst;
