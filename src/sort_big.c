@@ -48,8 +48,8 @@ void	sort_big(t_list **stack_a, t_list **stack_b)
 
 	max_bits = get_max_bits(stack_a);
 	size = ft_lstsize(*stack_a);
-	j = -1;
-	while (++j <= max_bits)
+	j = 0;
+	while (j <= max_bits)
 	{
 		size = ft_lstsize(*stack_a);
 		while (size-- && !is_sorted(stack_a))
@@ -59,7 +59,8 @@ void	sort_big(t_list **stack_a, t_list **stack_b)
 			else
 				ra(stack_a);
 		}
-		sort_stack_b(stack_a, stack_b, ft_lstsize(*stack_b), max_bits, j + 1);
+		j++;
+		sort_stack_b(stack_a, stack_b, ft_lstsize(*stack_b), max_bits, j);
 	}
 	while (ft_lstsize(*stack_b) != 0)
 		pa(stack_a, stack_b);
