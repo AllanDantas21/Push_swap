@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_big.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/03 02:16:53 by aldantas          #+#    #+#             */
+/*   Updated: 2024/01/03 02:18:01 by aldantas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "../includes/push_swap.h"
 
 int	is_sorted(t_list **stack)
@@ -18,7 +29,7 @@ static int	get_max_bits(t_list **stack)
 {
 	int		max_bits;
 	int		max;
-				
+
 	max = get_max_index(stack);
 	max_bits = 0;
 	while ((max >> max_bits) != 0)
@@ -33,7 +44,7 @@ static void	sort_b(t_list **stack_a, t_list **stack_b, int max_bit, int bit)
 	size = ft_lstsize(*stack_b);
 	while (size-- && bit <= max_bit && !is_sorted(stack_a))
 	{
-	if ((((*stack_b)->index >> bit) & 1) == 0)
+		if ((((*stack_b)->index >> bit) & 1) == 0)
 			rb(stack_b);
 		else
 			pa(stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 15:32:54 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/23 18:18:29 by aldantas         ###   ########.fr       */
+/*   Updated: 2024/01/03 02:17:23 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
@@ -64,7 +64,6 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	sort_stack(stack_a, stack_b);
-	//print_values(*stack_a);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

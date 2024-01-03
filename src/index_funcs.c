@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 00:19:20 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/23 18:06:45 by aldantas         ###   ########.fr       */
+/*   Updated: 2024/01/03 02:18:23 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
@@ -89,7 +89,6 @@ void	print_values(t_list *stack)
 	while (tmp != NULL)
 	{
 		ft_putnbr_fd(tmp->value, 1);
-		//ft_putnbr_fd(tmp->index, 1);
 		ft_putchar_fd('\n', 1);
 		tmp = tmp->next;
 	}
