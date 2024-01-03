@@ -74,18 +74,3 @@ int	ft_lstsize(t_list *head)
 	}
 	return (i);
 }
-
-void	free_stack(t_list **stack)
-{
-	t_list	*head;
-	t_list	*tmp;
-
-	head = *stack;
-	while (head)
-	{
-		tmp = head;
-		head = head->next;
-		free(tmp);
-	}
-	free(stack);
-}

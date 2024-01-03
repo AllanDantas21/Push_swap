@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 15:32:54 by aldantas          #+#    #+#             */
-/*   Updated: 2024/01/03 02:17:23 by aldantas         ###   ########.fr       */
+/*   Updated: 2024/01/03 02:21:16 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
@@ -34,6 +34,21 @@ static void	init_stack(t_list **stack, int argc, char **argv)
 	set_index(stack);
 	if (argc == 2)
 		ft_free(args);
+}
+
+void	free_stack(t_list **stack)
+{
+	t_list	*head;
+	t_list	*tmp;
+
+	head = *stack;
+	while (head)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
+	free(stack);
 }
 
 static void	sort_stack(t_list **stack_a, t_list **stack_b)
