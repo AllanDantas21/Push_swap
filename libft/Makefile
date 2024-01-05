@@ -18,13 +18,13 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar -rcs $(NAME) $(OBJECTS)
+	@ar -rcs $(NAME) $(OBJECTS)
 
 $(OBJECTS): $(FILES)
 	$(CC) $(FLAGS) -c $(FILES)
 
 bonus: $(BONUS_OBJECTS)
-	ar -rcs $(NAME) $(BONUS_OBJECTS)
+	@ar -rcs $(NAME) $(BONUS_OBJECTS)
 
 $(BONUS_OBJECTS): $(BONUS)
 	$(CC) $(FLAGS) -c $(BONUS)
