@@ -20,7 +20,7 @@ typedef struct s_list
 	int				index;
 	struct s_list	*next;
 }					t_list;
-
+/* push swap funcs */
 void	sort_big(t_list **stack_a, t_list **stack_b);
 void	sort_small(t_list **stack_a, t_list **stack_b);
 void	set_index(t_list **stack);
@@ -33,7 +33,7 @@ void	print_values(t_list *stack);
 void	ft_error(char *msg);
 void	*ft_free(char **mat);
 
-// Movimentos da push_swap
+/* moves funcs */
 int		sa(t_list **stack_a);
 int		sb(t_list **stack_b);
 int		ss(t_list **stack_a, t_list **stack_b);
@@ -46,7 +46,7 @@ int		rra(t_list **stack_a);
 int		rrb(t_list **stack_b);
 int		rrr(t_list **stack_a, t_list **stack_b);
 
-// funções de lista importadadas da libft
+/* libft funcs imported*/
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	free_stack(t_list **stack);
