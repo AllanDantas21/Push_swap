@@ -21,17 +21,15 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 /* push swap funcs */
+void	check_args(char **argv, int argc);
+void	set_index(t_list **stack);
 void	sort_big(t_list **stack_a, t_list **stack_b);
 void	sort_small(t_list **stack_a, t_list **stack_b);
-void	set_index(t_list **stack);
-t_list	*get_next_min(t_list **stack);
+void	ft_error(char *msg);
+void	*ft_free(char **mat);
 int		get_max_index(t_list **stack);
 int		get_min_index(t_list **stack);
 int		is_sorted(t_list **stack);
-void	check_args(char **argv, int argc);
-void	print_values(t_list *stack);
-void	ft_error(char *msg);
-void	*ft_free(char **mat);
 
 /* moves funcs */
 int		sa(t_list **stack_a);
@@ -49,7 +47,6 @@ int		rrr(t_list **stack_a, t_list **stack_b);
 /* libft funcs imported*/
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-void	free_stack(t_list **stack);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int value);

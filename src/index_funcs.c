@@ -11,21 +11,7 @@
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
 
-void	set_index(t_list **stack)
-{
-	t_list	*head;
-	int		index;
-
-	index = 0;
-	head = get_next_min(stack);
-	while (head)
-	{
-		head->index = index++;
-		head = get_next_min(stack);
-	}
-}
-
-t_list	*get_next_min(t_list **stack)
+static t_list	*get_next_min(t_list **stack)
 {
 	t_list	*head;
 	t_list	*min;
@@ -47,6 +33,20 @@ t_list	*get_next_min(t_list **stack)
 		}
 	}
 	return (min);
+}
+
+void	set_index(t_list **stack)
+{
+	t_list	*head;
+	int		index;
+
+	index = 0;
+	head = get_next_min(stack);
+	while (head)
+	{
+		head->index = index++;
+		head = get_next_min(stack);
+	}
 }
 
 int	get_max_index(t_list **stack)
@@ -79,17 +79,4 @@ int	get_min_index(t_list **stack)
 		tmp = tmp->next;
 	}
 	return (min);
-}
-
-void	print_values(t_list *stack)
-{
-	t_list	*tmp;
-
-	tmp = stack;
-	while (tmp != NULL)
-	{
-		ft_putnbr_fd(tmp->value, 1);
-		ft_putchar_fd('\n', 1);
-		tmp = tmp->next;
-	}
 }

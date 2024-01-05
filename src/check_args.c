@@ -40,7 +40,7 @@ static int	has_duplicate(int num, char **argv, int i)
 	return (0);
 }
 
-int	has_num(char *num)
+static int	has_num(char *num)
 {
 	int	i;
 

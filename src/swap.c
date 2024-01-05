@@ -23,7 +23,7 @@ static int	swap_stack(t_list **stack)
 	head = *stack;
 	next = head->next;
 	if (!head && !next)
-		ft_error("error durante o swap!");
+		ft_error("error while swap!");
 	tmp_value = head->value;
 	tmp_index = head->index;
 	head->value = next->value;
