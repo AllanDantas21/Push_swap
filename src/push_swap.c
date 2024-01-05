@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 	t_list	**stack_a;
 	t_list	**stack_b;
 
-	if (argc < 2)
+	if (argc < 2 || ((argc == 2) && (!argv[1][0])))
 		return (-1);
 	check_args(argv, argc);
 	stack_a = (t_list **)malloc(sizeof(t_list));
