@@ -11,21 +11,21 @@ CFLAGS		= -Wall -Werror -Wextra
 INCLUDE = -I include
 RM = rm -rf
 
-all:	$(NAME) 
+all:	$(NAME)
 
 $(NAME) : $(OBJ)
 		@make -C libft
-		$(CC) $(CFLAGS)  $(OBJ) $(INCLUDE) libft/$(LIBFT) -o $(NAME)
+		@$(CC) $(CFLAGS)  $(OBJ) $(INCLUDE) libft/$(LIBFT) -o $(NAME)
+		@echo ✔️Compilation Finish✔️
 
 clean : 
 		@make clean -C libft
 		${RM} ${OBJ}
 
-
 fclean : clean
 		@make fclean -C libft
 		${RM} $(NAME)
-		${RM} $(LIBFT)
+		@${RM} $(LIBFT)
 
 re: fclean all
 
