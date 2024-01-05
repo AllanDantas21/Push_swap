@@ -30,6 +30,7 @@ void	*ft_free(char **mat);
 int		get_max_index(t_list **stack);
 int		get_min_index(t_list **stack);
 int		is_sorted(t_list **stack);
+int		count_args(char *str);
 
 /* moves funcs */
 int		sa(t_list **stack_a);

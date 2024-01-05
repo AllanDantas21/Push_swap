@@ -35,6 +35,7 @@ static void	init_stack(t_list **stack, int argc, char **argv)
 	i = 0;
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
+
 	else
 	{
 		i = 1;
@@ -64,8 +65,10 @@ int	main(int argc, char **argv)
 	t_list	**stack_a;
 	t_list	**stack_b;
 
-	if (argc < 2 || ((argc == 2) && (!argv[1][0])))
-		return (-1);
+	if ((argc < 2))
+		return (EXIT_FAILURE);
+	if (argc == 2 && (count_args(argv[1]) < 2))
+		ft_error("Error\n");
 	check_args(argv, argc);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));

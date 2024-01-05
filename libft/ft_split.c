@@ -30,6 +30,17 @@ static size_t	count_w(char const *s, char c)
 	return (words);
 }
 
+static void	*ft_free(char **mat)
+{
+	int	i;
+
+	i = 0;
+	while (i > 0)
+		free(mat[i--]);
+	free(mat);
+	return (NULL);
+}
+
 static void	alloc_w(char const *s, char c, char **arr)
 {
 	size_t	letters;
@@ -65,7 +76,7 @@ char	**ft_split(char const *s, char c)
 	words = count_w(s, c);
 	arr = (char **) malloc (sizeof(char *) * (words + 1));
 	if (!arr)
-		return (NULL);
+		return (ft_free(arr));
 	alloc_w(s, c, arr);
 	arr[words] = 0;
 	return (arr);

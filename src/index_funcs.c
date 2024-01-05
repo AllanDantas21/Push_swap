@@ -80,3 +80,20 @@ int	get_min_index(t_list **stack)
 	}
 	return (min);
 }
+
+int	count_args(char *s)
+{
+	int	count;
+
+	count = 0;
+	while (*s)
+	{
+		while (*s && (*s == ' ' || *s == '\t'))
+			s++;
+		if (*s)
+			count++;
+		while (*s && (*s != ' ' || *s != '\t'))
+			s++;
+	}
+	return (count);
+}
