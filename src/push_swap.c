@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 15:32:54 by aldantas          #+#    #+#             */
-/*   Updated: 2024/01/03 02:21:16 by aldantas         ###   ########.fr       */
+/*   Updated: 2024/01/11 00:14:13 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
@@ -67,7 +67,7 @@ int	main(int argc, char **argv)
 	if ((argc < 2))
 		return (EXIT_FAILURE);
 	if (argc == 2 && (count_args(argv[1]) < 2))
-		ft_error("Error\n");
+		return (EXIT_FAILURE);
 	check_args(argv, argc);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));

@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:03:22 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/19 00:14:05 by aldantas         ###   ########.fr       */
+/*   Updated: 2024/01/11 00:25:23 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PUSH_SWAP_H
@@ -46,6 +46,7 @@ int		rrb(t_list **stack_b);
 int		rrr(t_list **stack_a, t_list **stack_b);
 
 /* libft funcs imported*/
+long	ft_atol(const char *nptr);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 02:16:02 by aldantas          #+#    #+#             */
-/*   Updated: 2024/01/03 02:16:05 by aldantas         ###   ########.fr       */
+/*   Updated: 2024/01/11 00:26:15 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
@@ -74,7 +74,7 @@ void	check_args(char **argv, int argc)
 	}
 	while (args[i])
 	{
-		tmp = ft_atoi(args[i]);
+		tmp = ft_atol(args[i]);
 		if (has_duplicate(tmp, args, i) || !has_num(args[i]))
 			ft_error("Error\n");
 		if (tmp < -2147483648 || tmp > 2147483647)
