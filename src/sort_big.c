@@ -11,20 +11,6 @@
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
 
-int	is_sorted(t_list **stack)
-{
-	t_list	*head;
-
-	head = *stack;
-	while (head && head->next)
-	{
-		if (head->value > head->next->value)
-			return (0);
-		head = head->next;
-	}
-	return (1);
-}
-
 static int	get_max_bits(t_list **stack)
 {
 	int		max_bits;
