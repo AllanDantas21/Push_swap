@@ -48,7 +48,7 @@ static void	init_stack(t_list **stack, int argc, char **argv)
 	}
 	set_index(stack);
 	if (argc == 2)
-		ft_free(args);
+		ft_free((void **)args);
 }
 
 static void	sort_stack(t_list **stack_a, t_list **stack_b)
@@ -65,17 +65,22 @@ int	main(int argc, char **argv)
 	t_list	**stack_b;
 
 	if ((argc < 2))
-		return (EXIT_FAILURE);
-	if (argc == 2 && (count_args(argv[1]) < 2))
-		return (EXIT_FAILURE);
+		return (-1);
+	if (argc == 2 && (count_nums(argv[1], ' ') == 1))
+		return (-1);
 	check_args(argv, argc);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
 	init_stack(stack_a, argc, argv);
-	if (!is_sorted(stack_a))
-		sort_stack(stack_a, stack_b);
+	if (is_sorted(stack_a))
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
+		return (0);
+	}
+	sort_stack(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

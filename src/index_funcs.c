@@ -81,19 +81,22 @@ int	get_min_index(t_list **stack)
 	return (min);
 }
 
-int	count_args(char *s)
+size_t	count_nums(char const *s, char c)
 {
-	int	count;
+	size_t	words;
 
-	count = 0;
+	if (!s)
+		return (0);
+	words = 0;
 	while (*s)
 	{
-		while (*s && (*s == ' ' || *s == '\t'))
+		while (*s == c)
 			s++;
 		if (*s)
-			count++;
-		while (*s && (*s != ' ' || *s != '\t'))
+			words++;
+		while (*s != c && *s)
 			s++;
 	}
-	return (count);
+	return (words);
 }
+

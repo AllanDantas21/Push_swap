@@ -25,12 +25,12 @@ void	check_args(char **argv, int argc);
 void	set_index(t_list **stack);
 void	sort_big(t_list **stack_a, t_list **stack_b);
 void	sort_small(t_list **stack_a, t_list **stack_b);
-void	ft_error(char *msg);
-void	*ft_free(char **mat);
+void	ft_error(char *msg, char **args, int argc);
+void	ft_free(void **vec);
 int		get_max_index(t_list **stack);
 int		get_min_index(t_list **stack);
 int		is_sorted(t_list **stack);
-int		count_args(char *str);
+size_t	count_nums(char const *s, char c);
 
 /* moves funcs */
 int		sa(t_list **stack_a);
