@@ -11,24 +11,6 @@
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
 
-void	ft_error(char *msg, char **args, int argc)
-{
-	if (argc == 2)
-		ft_free((void **)args);
-	ft_putstr_fd(msg, STDERR_FILENO);
-	exit(0);
-}
-
-void	ft_free(void **mat)
-{
-	size_t	i;
-
-	i = 0;
-	while (mat[i])
-		free(mat[i++]);
-	free(mat);
-}
-
 static int	has_duplicate(int num, char **argv, int i)
 {
 	i++;
@@ -57,6 +39,16 @@ static int	has_num(char *num)
 	return (1);
 }
 
+static	void	check(long tmp, char **args, int argc, int i)
+{
+	if (has_duplicate(tmp, args, i))
+		ft_error("Error\n", args, argc);
+	if(!has_num(args[i]))
+		ft_error("Error\n", args, argc);
+	if (tmp < -2147483648 || tmp > 2147483647)
+		ft_error("Error\n", args, argc);
+}
+
 void	check_args(char **argv, int argc)
 {
 	int		i;
@@ -74,12 +66,7 @@ void	check_args(char **argv, int argc)
 	while (args[i])
 	{
 		tmp = ft_atol(args[i]);
-		if (has_duplicate(tmp, args, i))
-			ft_error("Error\n", args, argc);
-		if(!has_num(args[i]))
-			ft_error("Error\n", args, argc);
-		if (tmp < -2147483648 || tmp > 2147483647)
-			ft_error("Error\n", args, argc);
+		check(tmp, args, argc, i);
 		i++;
 	}
 	if (argc == 2)

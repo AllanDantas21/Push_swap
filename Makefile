@@ -2,7 +2,7 @@ NAME = push_swap
 LIBFT = libft.a
 SRCC_FILES =	push_swap.c index_funcs.c lists.c \
 				check_args.c swap.c push.c  \
-				rotate.c reverse_rotate.c sort_big.c sort_small.c ft_atol.c
+				rotate.c reverse_rotate.c sort_big.c sort_small.c utils.c
 SRC_DIR = src/
 SRC = $(addprefix $(SRC_DIR), $(SRCC_FILES))
 OBJ = ${SRC:.c=.o}
@@ -16,7 +16,7 @@ all:	$(NAME)
 $(NAME) : $(OBJ)
 		@make -C libft
 		@$(CC) $(CFLAGS)  $(OBJ) $(INCLUDE) libft/$(LIBFT) -o $(NAME)
-		@echo ✔️Compilation Finish✔️
+		@echo Compilation Finish
 
 clean : 
 		@make clean -C libft
