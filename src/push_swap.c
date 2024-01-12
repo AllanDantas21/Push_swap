@@ -6,6 +6,8 @@ static t_list **setup_stack(void)
 	t_list	**tmp;
 
 	tmp = (t_list **)malloc(sizeof(t_list));
+	if(!tmp)
+		return (NULL);
 	*tmp = NULL;
 	return (tmp);
 }
