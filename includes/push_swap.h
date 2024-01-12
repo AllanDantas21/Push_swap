@@ -21,6 +21,9 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 /* push swap funcs */
+void	sort_stack(t_list **stack_a, t_list **stack_b);
+void	init_stack(t_list **stack, int argc, char **argv);
+void	free_stack(t_list **stack);
 void	check_args(char **argv, int argc);
 void	set_index(t_list **stack);
 void	sort_big(t_list **stack_a, t_list **stack_b);
