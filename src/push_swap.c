@@ -16,6 +16,16 @@ static void	free_stacks(t_list **stack_a, t_list **stack_b)
 	free_stack(stack_b);
 }
 
+static void	check_sorted(t_list **stack_a, t_list **stack_b)
+{
+	if (is_sorted(stack_a))
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
+		exit (-1);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	**stack_a;
@@ -29,12 +39,7 @@ int	main(int argc, char **argv)
 	stack_a = setup_stack();
 	stack_b = setup_stack();
 	init_stack(stack_a, argc, argv);
-	if (is_sorted(stack_a))
-	{
-		free_stack(stack_a);
-		free_stack(stack_b);
-		return (0);
-	}
+	check_sorted(stack_a, stack_b);
 	sort_stack(stack_a, stack_b);
 	free_stacks(stack_a, stack_b);
 	return (0);
