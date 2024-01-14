@@ -20,6 +20,7 @@ typedef struct s_list
 	int				index;
 	struct s_list	*next;
 }					t_list;
+
 /* push swap funcs */
 void	sort_stack(t_list **stack_a, t_list **stack_b);
 void	init_stack(t_list **stack, int argc, char **argv);
@@ -33,6 +34,7 @@ void	ft_free(void **vec);
 int		get_max_index(t_list **stack);
 int		get_min_index(t_list **stack);
 int		is_sorted(t_list **stack);
+int		invalid_input(char *str);
 size_t	count_nums(char const *s, char c);
 
 /* moves funcs */

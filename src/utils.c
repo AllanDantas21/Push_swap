@@ -59,3 +59,13 @@ long	ft_atol(const char *nptr)
 	}
 	return ((long)(res * sign));
 }
+
+int	invalid_input(char *str)
+{
+	int	final;
+
+	final = ft_strlen(str) - 1;
+	if (str[final] == ' ' &&  (count_nums(str, ' ') > 1))
+		return (1);
+	return (0);
+}

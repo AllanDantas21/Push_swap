@@ -56,6 +56,11 @@ void	check_args(char **argv, int argc)
 	char	**args;
 
 	i = 0;
+	if (argc == 2 && invalid_input(argv[1]))
+	{
+		write(2, "Error\n", 6);
+		exit(0);
+	}
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
 	else
