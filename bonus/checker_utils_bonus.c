@@ -9,7 +9,7 @@
 /*   Updated: 2024/01/14 14:11:56 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../includes/checker.h"
+#include "../includes/checker_bonus.h"
 
 char	*checker_moves(char *line, t_list **stack_a, t_list **stack_b)
 {

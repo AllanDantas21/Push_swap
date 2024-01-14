@@ -8,7 +8,7 @@ SRC_DIR = src/
 SRC = $(addprefix $(SRC_DIR), $(SRCC_FILES))
 OBJ = ${SRC:.c=.o}
 
-BONUS_FILES =	checker_utils.c checker.c validations.c 
+BONUS_FILES =	checker_utils_bonus.c checker_bonus.c validations_bonus.c 
 BONUS_UTILS = 	src/index_funcs.c src/lists.c \
 				src/check_args.c src/swap.c src/push.c \
 				src/stacks.c src/rotate.c src/reverse_rotate.c \

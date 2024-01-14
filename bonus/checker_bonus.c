@@ -9,7 +9,7 @@
 /*   Updated: 2024/01/14 14:17:42 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../includes/checker.h"
+#include "../includes/checker_bonus.h"
 
 static t_list	**setup_stack(void)
 {
