@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 02:16:02 by aldantas          #+#    #+#             */
-/*   Updated: 2024/01/11 00:26:15 by aldantas         ###   ########.fr       */
+/*   Updated: 2024/01/14 14:07:46 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
@@ -43,7 +43,7 @@ static	void	check(long tmp, char **args, int argc, int i)
 {
 	if (has_duplicate(tmp, args, i))
 		ft_error("Error\n", args, argc);
-	if(!has_num(args[i]))
+	if (!has_num(args[i]))
 		ft_error("Error\n", args, argc);
 	if (tmp < -2147483648 || tmp > 2147483647)
 		ft_error("Error\n", args, argc);

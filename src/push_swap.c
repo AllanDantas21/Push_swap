@@ -1,12 +1,22 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/14 14:05:47 by aldantas          #+#    #+#             */
+/*   Updated: 2024/01/14 14:07:22 by aldantas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "../includes/push_swap.h"
 
-static t_list **setup_stack(void)
+static t_list	**setup_stack(void)
 {
 	t_list	**tmp;
 
 	tmp = (t_list **)malloc(sizeof(t_list));
-	if(!tmp)
+	if (!tmp)
 		return (NULL);
 	*tmp = NULL;
 	return (tmp);
@@ -35,8 +45,6 @@ int	main(int argc, char **argv)
 
 	if ((argc < 2) || (argc == 2 && (count_nums(argv[1], ' ') == 1)))
 		return (-1);
-	//if (argc == 2 && invalid_input(argv[1]))
-	//	return (write(2, "Error\n", 6));
 	check_args(argv, argc);
 	stack_a = setup_stack();
 	stack_b = setup_stack();

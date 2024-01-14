@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/14 14:16:13 by aldantas          #+#    #+#             */
+/*   Updated: 2024/01/14 14:17:42 by aldantas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "../includes/checker.h"
 
-static t_list **setup_stack(void)
+static t_list	**setup_stack(void)
 {
 	t_list	**tmp;
 
 	tmp = (t_list **)malloc(sizeof(t_list));
-	if(!tmp)
+	if (!tmp)
 		return (NULL);
 	*tmp = NULL;
 	return (tmp);
@@ -17,13 +28,13 @@ static void	free_stacks(t_list **stack_a, t_list **stack_b)
 	free_stack(stack_b);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_list	**stack_a;
 	t_list	**stack_b;
 	char	*line;
 
-	if ((argc < 2) ||(argc == 2 && !argv[1][0]))
+	if ((argc < 2) || (argc == 2 && !argv[1][0]))
 		return (-1);
 	check_args(argv, argc);
 	stack_a = setup_stack();

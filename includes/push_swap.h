@@ -6,7 +6,7 @@
 /*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:03:22 by aldantas          #+#    #+#             */
-/*   Updated: 2024/01/11 00:25:23 by aldantas         ###   ########.fr       */
+/*   Updated: 2024/01/14 14:10:00 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef PUSH_SWAP_H
@@ -38,10 +38,10 @@ int		invalid_input(char *str);
 size_t	count_nums(char const *s, char c);
 
 /* moves funcs */
-int	swap_stack(t_list **stack);
-int	push_stack(t_list **stack_dst, t_list **stack_src);
-int	rotate_stack(t_list **stack);
-int	rev_rotate_stack(t_list **stack);
+int		swap_stack(t_list **stack);
+int		push_stack(t_list **stack_dst, t_list **stack_src);
+int		rotate_stack(t_list **stack);
+int		rev_rotate_stack(t_list **stack);
 
 int		sa(t_list **stack_a);
 int		sb(t_list **stack_b);

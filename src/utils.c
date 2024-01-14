@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aldantas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/14 14:08:11 by aldantas          #+#    #+#             */
+/*   Updated: 2024/01/14 14:09:34 by aldantas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "../includes/push_swap.h"
 
 void	ft_error(char *msg, char **args, int argc)
@@ -65,7 +76,7 @@ int	invalid_input(char *str)
 	int	final;
 
 	final = ft_strlen(str) - 1;
-	if (str[final] == ' ' &&  (count_nums(str, ' ') > 1))
+	if (str[final] == ' ' && (count_nums(str, ' ') > 1))
 		return (1);
 	return (0);
 }
