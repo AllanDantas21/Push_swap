@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "../includes/push_swap.h"
 
-static int	swap_stack(t_list **stack)
+int	swap_stack(t_list **stack)
 {
 	t_list	*head;
 	t_list	*next;

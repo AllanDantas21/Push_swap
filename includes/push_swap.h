@@ -36,6 +36,11 @@ int		is_sorted(t_list **stack);
 size_t	count_nums(char const *s, char c);
 
 /* moves funcs */
+int	swap_stack(t_list **stack);
+int	push_stack(t_list **stack_dst, t_list **stack_src);
+int	rotate_stack(t_list **stack);
+int	rev_rotate_stack(t_list **stack);
+
 int		sa(t_list **stack_a);
 int		sb(t_list **stack_b);
 int		ss(t_list **stack_a, t_list **stack_b);
