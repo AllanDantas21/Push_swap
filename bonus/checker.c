@@ -23,8 +23,8 @@ int main(int argc, char **argv)
 	t_list	**stack_b;
 	char	*line;
 
-	if (argc < 2)
-		return (0);
+	if ((argc < 2) ||(argc == 2 && !argv[1][0]))
+		return (-1);
 	check_args(argv, argc);
 	stack_a = setup_stack();
 	stack_b = setup_stack();
