@@ -1,3 +1,11 @@
+## Usage
+
+install:
+
+```shell
+Git clone git@github.com:AllanDantas21/Push_swap.git && cd Push_swap
+```
+
 ## Push_Swap Movements
 The possible actions are:
 
