@@ -1,9 +1,13 @@
-## Usage
+## Install
 
 install:
 
 ```shell
 Git clone git@github.com:AllanDantas21/Push_swap.git && cd Push_swap
+```
+## Usage
+```shell
+./push_swap <numbers>
 ```
 
 ## Push_Swap Movements
